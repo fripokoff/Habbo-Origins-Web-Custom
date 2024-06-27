@@ -6,11 +6,19 @@ With a custom loader to include your loader settings, and real-time furni values
 
 Countries supported: US, BR, ES
 
+## Look
+
 ## How to use
 
-Activate githubPages.
+1.<a href="https://forum.oldskooler.org/threads/portable-browser-with-flash-shockwave-basilisk.70/">`Download & Install Basilisk Portable browser with Flash/Shockwave`</a>
 
-Navigate to <a href="https://fripokoff.github.io/Habbo-Origins-Web/">` https://[github_username].github.io/Habbo-Origins-Web/`</a>
+2.Fork this project.
+
+3.Go to the settings -> Pages of the project that has been forked
+
+4.In the Branch section, select main and the root folder, then save and wait 5 minutes.
+
+5.Navigate to <a href="https://fripokoff.github.io/Habbo-Origins-Web/">`https://[github_username].github.io/Habbo-Origins-Web-Custom/`</a>
 
 ## How to update
 
@@ -18,5 +26,5 @@ Copy `%appdata%/Habbo Launcher/downloads/[version]` folder and paste in this pro
 
 # Thanks
 
-Special thanks to <a href="https://github.com/hiperesp/">`@hiperesp`</a>, for his work on the Habbo origins web project.
+Special thanks to <a href="https://github.com/hiperesp/">`@hiperesp`</a>, for his work on the Habbo origins web base project.
 
