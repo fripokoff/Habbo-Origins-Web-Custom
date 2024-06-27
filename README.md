@@ -1,4 +1,4 @@
-# Habbo Origins Web
+# Habbo Origins Web Custom
 
 This is habbo origins in web version.
 
@@ -8,7 +8,7 @@ Countries supported: US, BR, ES
 
 ## Look
 
-Custom : ![Screenshot 2024-06-28 003020](https://github.com/fripokoff/Habbo-Origins-Web-Custom/assets/65672472/7603f4ca-40ca-4efe-bc8c-632f26afcb05)
+Trader view : ![Screenshot 2024-06-28 003020](https://github.com/fripokoff/Habbo-Origins-Web-Custom/assets/65672472/7603f4ca-40ca-4efe-bc8c-632f26afcb05)
 
 Light : ![Screenshot 2024-06-28 002859](https://github.com/fripokoff/Habbo-Origins-Web-Custom/assets/65672472/0b060c49-41ac-4aa4-865a-d1bbc52f9e78)
 
