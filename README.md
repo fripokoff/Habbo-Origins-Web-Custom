@@ -1,4 +1,4 @@
-# Habbo Origins Web Custom
+# Habbo Origins Web
 
 This is habbo origins in web version.
 
