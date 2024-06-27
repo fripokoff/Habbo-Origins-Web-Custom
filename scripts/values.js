@@ -45,7 +45,7 @@ function getOriginValues() {
 			const doc = parser.parseFromString(html, 'text/html');
 			const xpath1 = '/html/body/table/tbody/tr/td/table[3]/tbody/tr/td/table[2]/tbody/tr/td[3]/table/tbody/tr/td/div[1]';
 			const xpath2 = '/html/body/table/tbody/tr/td/table[3]/tbody/tr/td/table[2]/tbody/tr/td[3]/table/tbody/tr/td/div[2]';
-			const xpath3 = '/html/body/table/tbody/tr/td/table[3]/tbody/tr/td/table[2]/tbody/tr/td[3]/table/tbody/tr/td/center/p[3]';
+			const xpath3 = '/html/body/table/tbody/tr/td/table[3]/tbody/tr/td/table[2]/tbody/tr/td[3]/table/tbody/tr/td/center';
 			function extractContentByXPath(doc, xpath) {
 				if (doc instanceof Document && doc.evaluate) {
 					const result = doc.evaluate(xpath, doc, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
