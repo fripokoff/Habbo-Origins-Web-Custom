@@ -240,10 +240,12 @@
 	transform: scale(2)!important;
   }
   
-  
   .time
   {
 	text-align: center;
+	top: -8px;
+	margin: 0;
+	position: relative;
   }
 
   #last-update

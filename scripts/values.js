@@ -1,5 +1,5 @@
 var html = "";
-
+var last_update = "";
 function extractValuesFromHTML(html) {
 	const parser = new DOMParser();
 	const doc = parser.parseFromString(html, 'text/html');
@@ -35,7 +35,11 @@ function extractValuesFromHTML(html) {
 
 function getOriginValues() {
 	document.getElementById('loader').style.display = 'block';
-	document.getElementById('items').innerHTML = '';
+	document.getElementById('items').innerHTML = '<div id="last-update" class="time"></div>';
+	if(last_update)
+	{
+		document.getElementById('last-update').innerHTML = last_update;
+	}
 	const fullscreenBtn = document.getElementById('refreshBtn');
 	fullscreenBtn.style.boxShadow = "inset 2px 2px 0px 0px #905700, inset 0px 2px 0px 0px #e0aa00, inset 0px 0px 0px 2px #582400, inset 0px -2px 0px 0px #582400, inset 0px 0px 0px 0px #905700";
 	fetch('https://originvalues.com/')
@@ -68,9 +72,8 @@ function getOriginValues() {
 				const time = matches[4];
 				const monthNumber = (monthNames.indexOf(month) + 1).toString().padStart(2, '0');
 				const formattedDay = day.padStart(2, '0');
-				const formattedDate = `Update ${monthNumber}/${formattedDay}/${year} ${time} <a href="https://OriginValues.com" >OriginValues.com</a>`;
-				document.getElementById('last-update').innerHTML = formattedDate;
-				console.log(formattedDate);
+				last_update = `${monthNumber}/${formattedDay}/${year} ${time}`;
+				document.getElementById('last-update').innerHTML = last_update;
 			} else {
 				console.log("La date n'a pas pu être extraite.");
 			}

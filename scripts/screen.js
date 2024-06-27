@@ -27,8 +27,8 @@ function updateEmbedSize() {
     }
 
 	if (embed) {
-		embed.style.width = screenWidth  - (screenWidth * 0.12) + 'px';
-		embed.style.height = screenHeight + 'px';
+		embed.style.width = screenWidth  - (screenWidth * 0.07) + 'px';
+		embed.style.height = screenHeight + (screenWidth * 0.01) + 'px';
 	}
 
 	if (fixedRight) {
