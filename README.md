@@ -25,6 +25,8 @@ Light : ![Screenshot 2024-06-28 002859](https://github.com/fripokoff/Habbo-Origi
 
 5.Navigate to <a href="https://fripokoff.github.io/Habbo-Origins-Web/">`https://[github_username].github.io/Habbo-Origins-Web-Custom/`</a>
 
+**For a static test you need to host a node js localhost server or upload your files to an hhtp server (not https) and modify the dcr.**
+
 ## How to update
 
 Copy `%appdata%/Habbo Launcher/downloads/[version]` folder and paste in this project root, overriding the `downloads` folder.

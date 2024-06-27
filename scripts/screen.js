@@ -27,7 +27,7 @@ function updateEmbedSize() {
     }
 
 	if (embed) {
-		embed.style.width = screenWidth  - (screenWidth * 0.1) + 'px';
+		embed.style.width = screenWidth  - (screenWidth * 0.12) + 'px';
 		embed.style.height = screenHeight + 'px';
 	}
 
@@ -104,3 +104,7 @@ function fullScreen() {
         }
     }, 100);
 };
+
+setTimeout(() => {
+updateEmbedSize();
+}, 100);
