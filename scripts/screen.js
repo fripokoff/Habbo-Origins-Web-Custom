@@ -13,14 +13,14 @@ function updateEmbedSize() {
 	const rows = document.querySelectorAll('.row');
 
 	if (screenWidth < resolutionLargeur / 1.2) {
-        document.body.style.display = 'flex';
-        document.body.style.flexDirection = 'column';
+        fixedRight.style.display = 'flex';
+        fixedRight.style.flexDirection = 'column';
         rows.forEach(function(row) {
             row.style.flexDirection = 'column';
         });
     } else {
-        document.body.style.display = 'flex';
-        document.body.style.flexDirection = 'row';
+        fixedRight.style.display = 'flex';
+        fixedRight.style.flexDirection = 'row';
         rows.forEach(function(row) {
             row.style.flexDirection = 'row';
         });

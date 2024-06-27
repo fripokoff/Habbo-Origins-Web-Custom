@@ -1,7 +1,7 @@
 var actual_url = window.location.href;
 let countryCode = localStorage.getItem('origins_hotel') || 'us';
 localStorage.setItem('origins_hotel', countryCode);
-var dcr = "http://fripokoff.github.io/Habbo-Origins-Web/dcr/habbo.dcr";
+var dcr = "http://fripokoff.github.io/Habbo-Origins-Web-Custom/dcr/habbo.dcr";
 var loader_config = {
 	"dcr": dcr,
 	"us": {

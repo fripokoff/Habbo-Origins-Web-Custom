@@ -1,8 +1,4 @@
-body {
-	background: #000;
-	font-family: "Ubuntu", sans-serif;
-	font-size: 11px;
-  }
+
   .container {
 	margin: 0;
 	position: absolute;
@@ -253,5 +249,14 @@ body {
   #last-update
   {
 	font-size:14px;
-	color:rgb(70, 131, 70);
+	color:red;
   }
+  
+
+  #test {
+    position: relative;
+    width: 100vw;
+    height: 24px;
+    background-color: #000;
+    z-index: 10;
+}

@@ -1,16 +1,14 @@
 /* style.css */
 /* Habbo-Origins-Web */
 
-body {
-	overflow: hidden;
-	background-color: #083940;
+  body {
+	background: #000;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 11px;
 	height: 100%;
-	/* background-image: url(../images/bg_patterns/habbo.gif); */
 	margin: 0;
 	padding: 0;
-	font-size: 11px;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	/* text-align: center; */
+	overflow: hidden;
   }
   
   html,
@@ -24,12 +22,21 @@ body {
   Client
   */
   
+  #client object {
+	font-size: 0px;
+	background-image: linear-gradient(to bottom, #000000 90%, red #555555);
+}
+
   body#client {
 	background-color: black;
 	background-image: none !important;
 	color: black;
-  }
-  
+	/* display: flex;
+	flex-direction: column; */
+	height: 100vh;
+	margin:0;
+}
+
   #client-topbar {
 	background: url(../images/popup_topbar_slice.gif) repeat-x;
 	width: 100vw;
