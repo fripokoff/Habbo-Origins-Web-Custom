@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <title>Fripok ~ Habbo Origins ~ Client</title>
+		
+        <link href="styles/style.css" type="text/css" rel="stylesheet">
+		<link href="styles/values.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/7.2.3/css/flag-icons.min.css" integrity="sha512-bZBu2H0+FGFz/stDN/L0k8J0G8qVsAL0ht1qg5kTwtAheiXwiRKyCq1frwfbSFSJN3jooR5kauE0YjtPzhZtJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+	<!-- version 1.21.9 -->
+    <body id="client">
+		<div id="popup" class="popup">
+			<div class="popup-content">
+			  <span class="closeBtn">&times;</span>
+			  <div class="loader-config">
+				<h2>Loader Config</h2>
+				<label for="dcr">DCR</label>
+				<input type="text" id="dcr" value="http://localhost:3000/dcr/habbo.dcr">
+
+				<label for="info_host">Info Host</label>
+				<input type="text" id="info_host" value="game-ous.habbo.com">
+			  
+				<label for="info_port">Info Port</label>
+				<input type="text" id="info_port" value="40001">
+			  
+				<label for="mus_host">Mus Host</label>
+				<input type="text" id="mus_host" value="game-ous.habbo.com">
+			  
+				<label for="mus_port">Mus Port</label>
+				<input type="text" id="mus_port" value="40002">
+			  
+				<label for="reload">Reload</label>
+				<input type="text" id="reload" value="http://localhost:3000/">
+			  
+				<label for="site">Site</label>
+				<input type="text" id="site" value="http://localhost:3000/">
+			  
+				<label for="prefix">Prefix</label>
+				<input type="text" id="prefix" value="http://localhost:3000/">
+			  
+				<label for="fatal_error">Fatal Error</label>
+				<input type="text" id="fatal_error" value="http://localhost:3000/">
+			  
+				<label for="external_variables">External Variables</label>
+				<input type="text" id="external_variables" value="http://origins-gamedata.habbo.com/external_variables/1">
+			  
+				<label for="external_texts">External Texts</label>
+				<input type="text" id="external_texts" value="http://origins-gamedata.habbo.com/external_texts/1">
+			  
+				<div class="launch-button">
+				  <button type="button">Launch</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+        <div id="container">
+        </div>
+		<div id="fixedRight">
+			<div class="container">
+				<div id="main-console" class="console">
+				  <div class="title">Habbo Origins WebCustom</div>
+				  <div style="text-align: center;">Thanks <a href="https://github.com/hiperesp/">@hiperesp</a> Made by <a href="https://github.com/fripokoff">@Fripok</a></div>
+				  <div class="pattern">&nbsp;</div>
+				  <div id="loader" class="loop cubes">
+					<div class="item cubes"></div>
+					<div class="item cubes"></div>
+					<div class="item cubes"></div>
+					<div class="item cubes"></div>
+					<div class="item cubes"></div>
+					<div class="item cubes"></div>
+				</div>
+				  <div id="items" class="inner">
+					
+				  </div>
+				  <div id="last-update" class="time"></div>
+				  <div class="friends">
+					<div id="countriesPopup" style="display:none;">
+						<div onclick="setLoaderbyCountryCode('us')" class="country" data-country="us" style="background:#ffd400;"><img class="avatar" src="images/us.jpg"/></div>
+						<div onclick="setLoaderbyCountryCode('es')" class="country" data-country="es" style="background:#ffd400;"><img class="avatar" src="images/es.jpg"/></div>
+						<div onclick="setLoaderbyCountryCode('br')" class="country" data-country="br" style="background:#ffd400;"><img class="avatar" src="images/br.jpg"/></div>
+					  </div>
+					  <div style="background:#ffd400;" id="countryBtn" class="friend"><img class="avatar" src="images/us.jpg" align="middle"/></div>
+
+					<div onclick="getOriginValues()" style="background:#ffd400;" id="refreshBtn" class="friend"><img class="avatar" src="images/refresh.png" align="middle"/>
+					  </div>
+					<div onclick="fullScreen()" style="background:#ffd400;" id="fullscreenBtn" class="friend"><img class="avatar" src="images/fullscreen.png" align="middle"/>
+					</div>
+					<div onclick="customSettings()" style="background:#ffd400;" id="settingsBtn" class="friend"><img class="avatar" src="images/settings.png" align="middle"/>
+					</div>
+					<div style="background:#ffd400;" id="helpBtn" class="friend"><img class="avatar" src="images/help.png" align="middle"/>
+					</div>
+				  </div>
+
+				  <div id="players-online" class="time"></div> 
+				</div>
+			  </div>
+	
+		</div>
+		<script src="scripts/online.js"></script>
+		<script src="scripts/config.js"></script>
+		<script src="scripts/screen.js"></script>
+		<script src="scripts/values.js"></script>
+    </body>
+</html>

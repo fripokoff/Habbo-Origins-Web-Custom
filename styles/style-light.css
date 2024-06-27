@@ -1,0 +1,26 @@
+body#client {
+	background-color: black;
+	background-image: none !important;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	margin:0;
+}
+#container {
+	flex: 1;
+}
+
+#countriesPopup
+{
+	display: flex;
+    flex-direction: row;
+    height: 42px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.avatar
+{
+	height:32px;
+}

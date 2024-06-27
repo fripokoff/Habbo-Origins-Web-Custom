@@ -1,0 +1,257 @@
+body {
+	background: #000;
+	font-family: "Ubuntu", sans-serif;
+	font-size: 11px;
+  }
+  .container {
+	margin: 0;
+	position: absolute;
+  }
+  .console {
+	display: block;
+	margin-right: 20px;
+	height: 98vh;
+	background: #fdcc00;
+	box-shadow: inset 0px 0px 0px 1px #fbcc00, inset 0px 0px 0px 2px #fee100;
+	border-radius: 6px;
+	border: 1px solid #000;
+	padding: 10px 10px 0 10px;
+  }
+  .console .title {
+	display: inline-block;
+	color: #2b2300;
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  .console .pattern {
+	display: inline-block;
+	cursor: -webkit-grab;
+	cursor: grab;
+	margin-left: 5px;
+	min-height: 15px;
+	max-width: 145px;
+	width: 100%;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAECAYAAABLLYUHAAAAM0lEQVQYV2P8fYbhP4t8B8OfhxUMjGcXMfzX02JguHSNgYHx/+uO/yBRkCwjSBlIFCQLAFXCFXD0jQEvAAAAAElFTkSuQmCC")
+	  repeat;
+  }
+  .console .close {
+	display: inline-block;
+	cursor: pointer;
+	height: 14px;
+	width: 14px;
+	float: right;
+  }
+  .console .inner {
+	display: block;
+	overflow: scroll;
+	overflow-x: hidden;
+	border-radius: 8px;
+	height: 85vh;
+	background: repeating-linear-gradient(
+	  0deg,
+	  #313131,
+	  #535353 2px,
+	  #313131 2px
+	);
+	box-shadow: inset 0px 0px 0px 1px #000,
+	  inset 0 25px 0 -15px rgba(0, 0, 0, 0.45),
+	  inset 25px 0px 0 -15px rgba(0, 0, 0, 0.45),
+	  inset -25px 0px 0 -15px rgba(0, 0, 0, 0.45),
+	  inset 0 -10px 0 -5px rgba(0, 0, 0, 0.45);
+	color: #fff;
+	padding: 5px 5px;
+	border-top: 2px solid #be9300;
+	border-left: 1px solid #be9200;
+	border-right: 1px solid #fffe94;
+	border-bottom: 1px solid #fffe94;
+  }
+  .console .inner .chat .avatar {
+	width: 32px;
+	margin: 5px;
+	float: left;
+  }
+  .console .inner .chat .avatar-right {
+	width: 48px;
+	float: right;
+	margin-right: -5px;
+  }
+  .console .inner .chat .name {
+	display: inline-block;
+	position: relative;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 600;
+	margin-bottom: 5px;
+	margin-left: 5px;
+  }
+  .console .inner .chat .name-right {
+	display: inline-block;
+	position: relative;
+	color: #fff;
+	font-size: 10px;
+	margin-left: 15px;
+	font-weight: 600;
+	margin-bottom: 5px;
+  }
+  .console .inner .chat .dialog.right {
+	margin-left: 5px;
+  }
+  .console .inner .chat .dialog.right:after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 5%;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-left-color: #fff;
+	border-right: 0;
+	margin-top: 5px;
+	margin-right: -5px;
+  }
+  .console .inner .chat .time {
+	margin-top: 5px;
+	color: #a3a3a3;
+	font-size: 10px;
+	margin-left: 45px;
+  }
+  .console .inner .chat .time-right {
+	margin-left: 15px;
+	margin-top: 5px;
+	color: #a3a3a3;
+	font-size: 10px;
+  }
+  .console .friends {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .console .friends .friend {
+	text-align: center;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	border-top: 1px solid #8f5700;
+	border-right: 1px solid #6e3b00;
+	border-left: 1px solid #6e3b00;
+	border-bottom: 1px solid #905700;
+	box-shadow: inset 1px 1px 0px 0px #ffc300;
+	background: #dfaa00;
+  }
+  .console .friends .friend:not(:first-of-type) {
+	margin-left: -3px;
+  }
+  .console .friends .friend .avatar {
+	width: 48px;
+	height: 48px;
+  }
+  .console .friends .friend .name {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 5px;
+	text-align: center;
+	font-weight: bold;
+	color: #222;
+  }
+  .console .friends .selected {
+	background: #b67f04;
+	border-top: 1px solid #582400;
+	border-right: 1px solid #582400;
+	border-left: 1px solid #582400;
+	border-bottom: 1px solid #000;
+	box-shadow: inset 0px 1px 0px 0px #905700, inset 0px 2px 0px 0px #e0aa00,
+	  inset 0px -1px 0px 0px #582400, inset 0px -2px 0px 0px #582400,
+	  inset 0px -3px 2px 2px #905700;
+  }
+  
+  .console .inner .chat .dialog {
+	display: flex;
+	width: 100%;
+	min-height: 72px;
+	max-height: 72px;
+	flex-direction: row;
+	justify-content: center;
+	position: relative;
+	background: #292929;
+	color: #fff;
+	padding: 0px 10px;
+	border-radius: 6px;
+  }
+  .row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+	padding: 5px;
+	font-size: 20px;
+  }
+  
+  .warning {
+	padding: 12px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: start;
+	background: #f7c752;
+	border-radius: 8px;
+	box-shadow: 0px 0px 5px -3px #111;
+  }
+  
+  .furni_icon {
+	min-height: 46px;
+	max-height: 46px;
+	margin-right: 2px;
+  }
+  
+  .main-box {
+	display: flex;
+	text-align: center;
+	height: 72px;
+	min-width: 72px;
+	max-width: 72px;
+	min-height: 72px;
+	max-height: 72px;
+	align-content: center;
+	padding: 5px;
+	justify-content: center;
+  }
+  .big-furni {
+	min-width: 72px;
+	max-width: 72px;
+	min-height: 72px;
+	max-height: 72px;
+	object-fit: contain;
+  }
+  #flagsContainer .flag {
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  #flagsContainer .flag:hover {
+	transform: scale(2)!important;
+  }
+  
+  
+  .time
+  {
+	text-align: center;
+  }
+
+  #last-update
+  {
+	font-size:14px;
+	color:rgb(70, 131, 70);
+  }
