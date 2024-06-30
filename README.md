@@ -7,8 +7,13 @@ With a custom loader to include your loader settings, and real-time furni values
 Countries supported: US, BR, ES
 
 ## Look
+**(Basilisk required)**
 
-<a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/">`Play now (Basilisk required).`</a>
+<a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/">`Play now with Trader view`</a>
+
+<a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/light.html">`Play now with Light view`</a>
+
+<a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/small">`Play now with Small view`</a>
 
 Trader view : ![Screenshot 2024-06-28 003020](https://github.com/fripokoff/Habbo-Origins-Web-Custom/assets/65672472/7603f4ca-40ca-4efe-bc8c-632f26afcb05)
 
@@ -27,7 +32,7 @@ Light : ![Screenshot 2024-06-28 002859](https://github.com/fripokoff/Habbo-Origi
 
 5.Navigate to <a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/">`https://[github_username].github.io/Habbo-Origins-Web-Custom/`</a>
 
-**For a static test you need to host a node js localhost server or upload your files to an http server (not https) and modify the dcr.**
+**For a static test you need to host a node js localhost server or upload your files(dcr) to an http server (not https).**
 
 ## How to update
 
