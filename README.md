@@ -9,11 +9,11 @@ Countries supported: US, BR, ES
 ## Look
 **(Basilisk required)**
 
-<a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/">`Play Trader`</a>
+<a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/">`Play now with Trader view`</a>
 
-<a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/light.html">`Play Light`</a>
+<a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/light.html">`Play now with Light view`</a>
 
-<a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/small">`Play Small`</a>
+<a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/small">`Play now with Small view`</a>
 
 Trader view : ![Screenshot 2024-06-28 003020](https://github.com/fripokoff/Habbo-Origins-Web-Custom/assets/65672472/7603f4ca-40ca-4efe-bc8c-632f26afcb05)
 
