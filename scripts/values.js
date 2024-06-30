@@ -1,6 +1,19 @@
 var html = "";
 var last_update = "";
 let habboColaHcValue = 0;
+
+  function convertHcToCola(hcValue, colaClubvalue) {
+	const hcValueNum = parseFloat(hcValue);
+	const colaClubvalueNum = parseFloat(colaClubvalue);
+	let result = hcValueNum * colaClubvalueNum;
+	result = Math.round(result * 4) / 4;
+	if (result < 0.125) {
+	  result = 0;
+	}
+  
+	return result;
+  }
+
 function extractValuesFromHTML(html) {
 	const parser = new DOMParser();
 	const doc = parser.parseFromString(html, 'text/html');
@@ -28,7 +41,7 @@ function extractValuesFromHTML(html) {
 			name,
 			colaValue,
 			hcValue,
-			images: imageUrls[0]
+			images: "https://originvalues.com/" + imageUrls[0]
 		});
 	});
 	let hcval = parseFloat(extractedValues.find(item => item.name === "Habbo Cola")?.hcValue || null);
@@ -36,18 +49,15 @@ function extractValuesFromHTML(html) {
 		{
 			habboColaHcValue = hcval;
 		}
-	extractedValues.forEach(item => {
-		if(item.name !== "Habbo Cola") {
-			let value = parseFloat(item.hcValue) / habboColaHcValue;
-			item.colaValue = (Math.round(value * 2) / 2).toString();
-		}
-	});
+		extractedValues.forEach(item => {
+			if(item.name !== "Habbo Cola") {
+				item.colaValue = convertHcToCola(item.hcValue, habboColaHcValue);
+			}
+		});
 	return extractedValues;
 }
 
 function getOriginValues() {
-	document.getElementById('loader').style.display = 'block';
-	document.getElementById('items').innerHTML = '<div id="last-update" class="time"></div>';
 	if(last_update)
 	{
 		document.getElementById('last-update').innerHTML = last_update;
@@ -91,13 +101,15 @@ function getOriginValues() {
 			}
 			rares = extractValuesFromHTML(rares);
 			club = extractValuesFromHTML(club);
+			document.getElementById('webtrader').href="https://originvalues.com/";
+			document.getElementById('webtrader').text="Visit:originValues.com";
 			setTimeout(() => {
 				document.getElementById('loader').style.display = 'none';
 				appendItems(rares)
 				appendItems(club)
 				fullscreenBtn.style.boxShadow = "";
 			}, 1000);
-
+			
 		})
 		.catch(error => console.error('Erreur lors de la récupération des données:', error));
 }
@@ -110,7 +122,7 @@ function appendItems(items) {
 		div.innerHTML = `
 	  <div class="row">
 	  <div class="main-box">
-		<img class="big-furni" src="https://originvalues.com/${item.images}"/>
+		<img class="big-furni" src="${item.images}"/>
 	  </div>
 	  <div class="dialog left">
 		<div class="row">
@@ -131,4 +143,58 @@ function appendItems(items) {
 	});
 }
 
-getOriginValues();
+function getTraderClubValues()
+{
+	const extractedValues = [];
+	fetch('https://tc-api.serversia.com/items')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Réseau de réponse non ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+		let hcval = parseFloat(data.find(item => item.name === "Cola Machine")?.hc_val || null);
+		data.forEach(item => {
+			let name = item.name;
+			let colaValue = convertHcToCola(item.hc_val, hcval);
+			let hcValue = item.hc_val;
+			let image = item.image;
+			console.log(name, colaValue, hcValue, image)
+			extractedValues.push({
+				name,
+				colaValue,
+				hcValue,
+				images: image
+			});
+		});
+		document.getElementById('webtrader').href="https://traderclub.gg/";
+		document.getElementById('webtrader').text="Visit:traderClub.gg";
+		document.getElementById('last-update').innerHTML = "Soon";
+		setTimeout(() => {
+			document.getElementById('loader').style.display = 'none';
+			appendItems(extractedValues)
+			fullscreenBtn.style.boxShadow = "";
+		}, 1000);
+    })
+    .catch(error => console.error('Erreur lors de la récupération des données:', error));
+}
+
+function getTradeValues(site)
+{
+	document.getElementById('loader').style.display = 'block';
+	document.getElementById('items').innerHTML = '<div id="last-update" class="time"></div>';
+	if(site === "originvalues")
+	{
+		getOriginValues();
+	}else if(site === "traderclub")
+	{
+		getTraderClubValues();
+	}
+}
+
+getTradeValues(document.getElementById('tradesites').value);
+
+document.getElementById('tradesites').addEventListener('change', function() {
+	getTradeValues(this.value);
+  });

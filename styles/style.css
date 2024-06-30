@@ -325,3 +325,16 @@
 	height: 50px;
 	object-fit: cover;
   }
+
+  #tradesites {
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background-color: #f8f8f8;
+	cursor: pointer;
+  }
+
+  .select-container {
+	display: flex;
+	justify-content: space-around; /* Centrer horizontalement */
+	align-items: center; /* Centrer verticalement si nécessaire */
+  }
