@@ -155,7 +155,8 @@ function getTraderClubValues()
       return response.json();
     })
     .then(data => {
-		let hcval = parseFloat(data.find(item => item.name === "Cola Machine")?.hc_val || null);
+		let item = data.find(item => item.name === "Cola Machine");
+		let hcval = item ? parseFloat(item.hc_val) : null;
 		data.forEach(item => {
 			let name = item.name;
 			let colaValue = convertHcToCola(item.hc_val, hcval);
