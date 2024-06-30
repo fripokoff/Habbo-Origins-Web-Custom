@@ -44,7 +44,8 @@ function extractValuesFromHTML(html) {
 			images: "https://originvalues.com/" + imageUrls[0]
 		});
 	});
-	let hcval = parseFloat(extractedValues.find(item => item.name === "Habbo Cola")?.hcValue || null);
+	let item = extractedValues.find(item => item.name === "Habbo Cola");
+	let hcval = item ? parseFloat(item.hcValue) : null;
 	if(hcval)
 		{
 			habboColaHcValue = hcval;
@@ -102,7 +103,7 @@ function getOriginValues() {
 			rares = extractValuesFromHTML(rares);
 			club = extractValuesFromHTML(club);
 			document.getElementById('webtrader').href="https://originvalues.com/";
-			document.getElementById('webtrader').text="Visit:originValues.com";
+			document.getElementById('webtrader').text="Visit:originvalues.com";
 			setTimeout(() => {
 				document.getElementById('loader').style.display = 'none';
 				appendItems(rares)
@@ -169,7 +170,7 @@ function getTraderClubValues()
 			});
 		});
 		document.getElementById('webtrader').href="https://traderclub.gg/";
-		document.getElementById('webtrader').text="Visit:traderClub.gg";
+		document.getElementById('webtrader').text="Visit:traderclub.gg";
 		document.getElementById('last-update').innerHTML = "Soon";
 		setTimeout(() => {
 			document.getElementById('loader').style.display = 'none';
