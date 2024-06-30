@@ -8,6 +8,7 @@ Countries supported: US, BR, ES
 
 ## Look
 **(Basilisk required)**
+
 <a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/">`Play Trader`</a>
 
 <a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/light.html">`Play Light`</a>
