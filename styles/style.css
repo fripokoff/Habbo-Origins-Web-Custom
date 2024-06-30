@@ -335,6 +335,6 @@
 
   .select-container {
 	display: flex;
-	justify-content: space-around; /* Centrer horizontalement */
-	align-items: center; /* Centrer verticalement si nécessaire */
+	justify-content: space-around; 
+	align-items: center;
   }

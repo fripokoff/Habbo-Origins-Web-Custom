@@ -179,7 +179,7 @@ function getTraderClubValues()
     })
     .catch(error => console.error('Erreur lors de la récupération des données:', error));
 }
-
+//ddd
 function getTradeValues(site)
 {
 	document.getElementById('loader').style.display = 'block';
