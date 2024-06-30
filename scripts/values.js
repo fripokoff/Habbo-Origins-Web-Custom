@@ -195,6 +195,11 @@ function getTradeValues(site)
 	}
 }
 
+function refreshTradeValues()
+{
+	getTradeValues(document.getElementById('tradesites').value);
+}
+
 getTradeValues(document.getElementById('tradesites').value);
 
 document.getElementById('tradesites').addEventListener('change', function() {
