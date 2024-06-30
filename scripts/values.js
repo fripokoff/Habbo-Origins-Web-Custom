@@ -1,5 +1,6 @@
 var html = "";
 var last_update = "";
+let habboColaHcValue = 0;
 function extractValuesFromHTML(html) {
 	const parser = new DOMParser();
 	const doc = parser.parseFromString(html, 'text/html');
@@ -29,6 +30,17 @@ function extractValuesFromHTML(html) {
 			hcValue,
 			images: imageUrls[0]
 		});
+	});
+	let hcval = parseFloat(extractedValues.find(item => item.name === "Habbo Cola")?.hcValue || null);
+	if(hcval)
+		{
+			habboColaHcValue = hcval;
+		}
+	extractedValues.forEach(item => {
+		if(item.name !== "Habbo Cola") {
+			let value = parseFloat(item.hcValue) / habboColaHcValue;
+			item.colaValue = (Math.round(value * 2) / 2).toString();
+		}
 	});
 	return extractedValues;
 }
