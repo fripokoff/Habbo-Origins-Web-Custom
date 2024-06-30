@@ -63,4 +63,7 @@ function setLoaderbyCountryCode(countryCode) {
 	localStorage.setItem('origins_hotel', 'us');
 }
 
+setTimeout(() => {
 setLoaderbyCountryCode(countryCode);
+}, 500);
+
