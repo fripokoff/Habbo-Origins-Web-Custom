@@ -48,7 +48,7 @@ function changeDcr() {
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
 	if (urlParams.has('dcr')) {
-		dcr = "dcr/" + urlParams.get('dcr') + ".dcr?v" + random_version;
+		loader_config.dcr = "dcr/" + urlParams.get('dcr') + ".dcr?v" + random_version;
 	}
 	}
 
