@@ -44,9 +44,16 @@ var loader_config = {
 	},
 }
 
-
+function changeDcr() {
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	if (urlParams.has('dcr')) {
+		dcr = "dcr/" + urlParams.get('dcr') + ".dcr?v" + random_version;
+	}
+	}
 
 function setLoaderbyCountryCode(countryCode) {
+	changeDcr();
 	localStorage.setItem('origins_hotel', countryCode);
 	habboEmbed = document.getElementById('container');
 	habboEmbed.innerHTML = `<embed id="habboEmbed" src="${loader_config.dcr}" bgcolor="#000000" width="700" height="900" swvolume="true"
