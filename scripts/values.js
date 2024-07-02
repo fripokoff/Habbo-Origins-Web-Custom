@@ -128,13 +128,13 @@ function appendItems(items) {
 	  <div class="dialog left">
 		<div class="row">
 		  <div class="furni_icon">
-			<img class="furni_icon" src="https://static.originvalues.com/imgs/furni/habbo_cola.png"/>
+			<img class="furni_icon" src="https://tc-api.serversia.com/img/club_sofa.png"/>
 		  </div>
 		  <div class="warning__title">${item.colaValue}</div>
 		</div>
 		<div class="row">
 		  <div class="furni_icon">
-			<img class="furni_icon" src="https://static.originvalues.com/imgs/hc_icon.png"/>
+			<img class="furni_icon" src="https://tc-api.serversia.com/img/cola_machine.png"/>
 		  </div>
 		  <div class="warning__title">${item.hcValue}</div>
 		</div>
