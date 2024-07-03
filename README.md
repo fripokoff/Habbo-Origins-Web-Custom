@@ -2,7 +2,7 @@
 
 This is habbo origins in web version.
 
-With a custom loader to include your loader settings, and real-time furni values via <a href="https://forum.oldskooler.org/threads/portable-browser-with-flash-shockwave-basilisk.70/">`**traderclub.gg**`</a>
+With a custom loader to include your loader settings, and real-time furni values via <a href="https://forum.oldskooler.org/threads/portable-browser-with-flash-shockwave-basilisk.70/">**`traderclub.gg`**</a>
 
 Countries supported: 🇺🇸 🇧🇷 🇪🇸
 
