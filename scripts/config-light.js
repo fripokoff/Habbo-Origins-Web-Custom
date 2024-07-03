@@ -2,7 +2,7 @@ var habboEmbed = "";
 var actual_url = window.location.href;
 let countryCode = localStorage.getItem('origins_hotel') || 'us';
 localStorage.setItem('origins_hotel', countryCode);
-var dcr = "dcr/habbo.dcr";
+var dcr = "http://origins.hiper.esp.br/latest/habbo.dcr";
 var loader_config = {
 	"dcr": dcr,
 	"us": {
