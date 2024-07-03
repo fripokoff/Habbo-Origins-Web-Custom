@@ -6,15 +6,15 @@ With a custom loader to include your loader settings, and real-time furni values
 
 Countries supported: US, BR, ES
 
-## 👀 Look
-<a href="https://forum.oldskooler.org/threads/portable-browser-with-flash-shockwave-basilisk.70/">`**(Basilisk required)**`</a>
+## 👀 Looks
 
+❗<a href="https://forum.oldskooler.org/threads/portable-browser-with-flash-shockwave-basilisk.70/">`**(Basilisk required)**`</a>
 
 💰 <a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/">`Play now with Trader view`</a>
 
 ♻️ <a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/light.html">`Play now with Light view`</a>
 
-▫️ <a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/small">`Play now with Small view`</a>
+🤏 <a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/small">`Play now with Small view`</a>
 
 Trader view : ![Screenshot 2024-06-28 003020](https://github.com/fripokoff/Habbo-Origins-Web-Custom/assets/65672472/7603f4ca-40ca-4efe-bc8c-632f26afcb05)
 
