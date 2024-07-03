@@ -7,7 +7,8 @@ With a custom loader to include your loader settings, and real-time furni values
 Countries supported: US, BR, ES
 
 ## Look
-**(Basilisk required)**
+<a href="https://forum.oldskooler.org/threads/portable-browser-with-flash-shockwave-basilisk.70/">`**(Basilisk required)**`</a>
+
 
 <a href="https://fripokoff.github.io/Habbo-Origins-Web-Custom/">`Play now with Trader view`</a>
 
