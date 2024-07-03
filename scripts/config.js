@@ -152,23 +152,23 @@ document.querySelector('.launch-button button').addEventListener('click', functi
 
 
 
-fetch('https://origins.hiper.esp.br/')
-  .then(response => response.text())
-  .then(text => {
-    // Utilise une expression régulière pour trouver tous les numéros de version
-    const versionPattern = /v(\d+)/g;
-    let match;
+// fetch('https://origins.hiper.esp.br/')
+//   .then(response => response.text())
+//   .then(text => {
+//     // Utilise une expression régulière pour trouver tous les numéros de version
+//     const versionPattern = /v(\d+)/g;
+//     let match;
 
-    while ((match = versionPattern.exec(text)) !== null) {
-      const version = parseInt(match[1]);
-      if (version > highestVersionRelease) {
-        highestVersionRelease = version;
-      }
-    }
-	document.getElementById('dcr_version').textContent = "dcr v" + highestVersionRelease.
-    console.log('v', highestVersionRelease);
-  })
-  .catch(error => console.error('Erreur lors de la récupération des données:', error));
+//     while ((match = versionPattern.exec(text)) !== null) {
+//       const version = parseInt(match[1]);
+//       if (version > highestVersionRelease) {
+//         highestVersionRelease = version;
+//       }
+//     }
+// 	document.getElementById('dcr_version').textContent = "dcr v" + highestVersionRelease.
+//     console.log('v', highestVersionRelease);
+//   })
+//   .catch(error => console.error('Erreur lors de la récupération des données:', error));
 
 
 setLoaderbyCountryCode(countryCode);
