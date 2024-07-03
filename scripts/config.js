@@ -1,7 +1,7 @@
 var actual_url = window.location.href;
 let countryCode = localStorage.getItem('origins_hotel') || 'us';
 localStorage.setItem('origins_hotel', countryCode);
-var dcr = "http://origins.hiper.esp.br/latest/habbo.dcr";
+var dcr = "https://origins.hiper.esp.br/latest/habbo.dcr";
 let highestVersionRelease = 0;
 // var dcr = "http://fripokoff.github.io/Habbo-Origins-Web-Custom/dcr/habbo.dcr";
 var loader_config = {
@@ -152,18 +152,21 @@ document.querySelector('.launch-button button').addEventListener('click', functi
 
 
 
-fetch('https://api.sulek.dev/releases?variant=shockwave-windows')
-  .then(response => response.json())
-  .then(data => {
-    highestVersionRelease = data[0];
+fetch('https://origins.hiper.esp.br/')
+  .then(response => response.text())
+  .then(text => {
+    // Utilise une expression régulière pour trouver tous les numéros de version
+    const versionPattern = /v(\d+)/g;
+    let match;
 
-    data.forEach(release => {
-      if (parseInt(release.version) > parseInt(highestVersionRelease.version)) {
-        highestVersionRelease = release;
+    while ((match = versionPattern.exec(text)) !== null) {
+      const version = parseInt(match[1]);
+      if (version > highestVersionRelease) {
+        highestVersionRelease = version;
       }
-    });
+    }
 	document.getElementById('dcr_version').textContent = "dcr v" + highestVersionRelease.
-    console.log('La version la plus élevée est :', highestVersionRelease);
+    console.log('v', highestVersionRelease);
   })
   .catch(error => console.error('Erreur lors de la récupération des données:', error));
 
