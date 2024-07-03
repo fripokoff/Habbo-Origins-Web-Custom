@@ -4,7 +4,7 @@ This is habbo origins in web version.
 
 With a custom loader to include your loader settings, and real-time furni values via originvalues.com
 
-Countries supported: US, BR, ES
+Countries supported: 🇺🇸 🇧🇷 🇪🇸
 
 ## 👀 Looks
 
@@ -39,7 +39,7 @@ Light : ![Screenshot 2024-06-28 002859](https://github.com/fripokoff/Habbo-Origi
 
 Copy `%appdata%/Habbo Launcher/downloads/[version]` folder and paste in this project root, overriding the `downloads` folder.
 
-The current online loader is updated automatically thanks to @hiperesp
+The current online loader is updated automatically.
 
 # 🙏 Thanks
 
