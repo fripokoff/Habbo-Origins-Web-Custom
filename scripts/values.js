@@ -14,49 +14,49 @@ let habboColaHcValue = 0;
 	return result;
   }
 
-function extractValuesFromHTML(html) {
-	const parser = new DOMParser();
-	const doc = parser.parseFromString(html, 'text/html');
-	const items = doc.querySelectorAll('.grid-item');
-	const extractedValues = [];
-	items.forEach(item => {
-		const name = item.querySelector('h2').innerText;
-		let colaValue = item.querySelector('.cola-value') ? item.querySelector('.cola-value').innerText : 'N/A';
-		let hcValue = item.querySelector('.hc-value') ? item.querySelector('.hc-value').innerText : 'N/A';
-		const images = item.querySelectorAll('img');
-		const imageUrls = Array.from(images).map(img => {
-			const parts = img.src.split('/');
-			const imgsIndex = parts.indexOf('imgs');
-			return parts.slice(imgsIndex).join('/');
-		  });
-		  if(name === "Habbo Cola")
-			{
-				colaValue = "1";
-			}
-			else if(name === "Club Sofa")
-			{
-				hcValue = "1";
-			}
-		extractedValues.push({
-			name,
-			colaValue,
-			hcValue,
-			images: "https://originvalues.com/" + imageUrls[0]
-		});
-	});
-	let item = extractedValues.find(item => item.name === "Habbo Cola");
-	let hcval = item ? parseFloat(item.hcValue) : null;
-	if(hcval)
-		{
-			habboColaHcValue = hcval;
-		}
-		extractedValues.forEach(item => {
-			if(item.name !== "Habbo Cola") {
-				item.colaValue = convertHcToCola(item.hcValue, habboColaHcValue);
-			}
-		});
-	return extractedValues;
-}
+// function extractValuesFromHTML(html) {
+// 	const parser = new DOMParser();
+// 	const doc = parser.parseFromString(html, 'text/html');
+// 	const items = doc.querySelectorAll('.grid-item');
+// 	const extractedValues = [];
+// 	items.forEach(item => {
+// 		const name = item.querySelector('h2').innerText;
+// 		let colaValue = item.querySelector('.cola-value') ? item.querySelector('.cola-value').innerText : 'N/A';
+// 		let hcValue = item.querySelector('.hc-value') ? item.querySelector('.hc-value').innerText : 'N/A';
+// 		const images = item.querySelectorAll('img');
+// 		const imageUrls = Array.from(images).map(img => {
+// 			const parts = img.src.split('/');
+// 			const imgsIndex = parts.indexOf('imgs');
+// 			return parts.slice(imgsIndex).join('/');
+// 		  });
+// 		  if(name === "Habbo Cola")
+// 			{
+// 				colaValue = "1";
+// 			}
+// 			else if(name === "Club Sofa")
+// 			{
+// 				hcValue = "1";
+// 			}
+// 		extractedValues.push({
+// 			name,
+// 			colaValue,
+// 			hcValue,
+// 			images: "https://originvalues.com/" + imageUrls[0]
+// 		});
+// 	});
+// 	let item = extractedValues.find(item => item.name === "Habbo Cola");
+// 	let hcval = item ? parseFloat(item.hcValue) : null;
+// 	if(hcval)
+// 		{
+// 			habboColaHcValue = hcval;
+// 		}
+// 		extractedValues.forEach(item => {
+// 			if(item.name !== "Habbo Cola") {
+// 				item.colaValue = convertHcToCola(item.hcValue, habboColaHcValue);
+// 			}
+// 		});
+// 	return extractedValues;
+// }
 
 // function getOriginValues() {
 // 	if(last_update)
@@ -130,13 +130,13 @@ function appendItems(items) {
 		  <div class="furni_icon">
 			<img class="furni_icon" src="https://tc-api.serversia.com/img/club_sofa.png"/>
 		  </div>
-		  <div class="warning__title">${item.colaValue}</div>
+		  <div class="warning__title">${item.hcValue}</div>
 		</div>
 		<div class="row">
 		  <div class="furni_icon">
 			<img class="furni_icon" src="https://tc-api.serversia.com/img/cola_machine.png"/>
 		  </div>
-		  <div class="warning__title">${item.hcValue}</div>
+		  <div class="warning__title">${item.colaValue}</div>
 		</div>
 	  </div>
 	  </div>`;
@@ -155,10 +155,13 @@ function getTraderClubValues()
       return response.json();
     })
     .then(data => {
-		let item = data.find(item => item.name === "Cola Machine");
-		let hcval = item ? parseFloat(item.hc_val) : null;
+		
+		let item_cola = data.find(item => item.name === "Cola Machine");
+		let hcval = item_cola ? parseFloat(item_cola.hc_val) : 0;
 		let updated_at = null;
 		data.forEach(item => {
+			console.log({item})
+			console.log(item.hc_val)
 			let name = item.name;
 			let colaValue = convertHcToCola(item.hc_val, hcval);
 			let hcValue = item.hc_val;
@@ -174,6 +177,7 @@ function getTraderClubValues()
 		document.getElementById('webtrader').href="https://traderclub.gg/";
 		document.getElementById('webtrader').text="Visit:traderclub.gg";
 		setTimeout(() => {
+			extractedValues.reverse()
 			document.getElementById('loader').style.display = 'none';
 			appendItems(extractedValues)
 			document.getElementById('last-update').innerHTML = updated_at;
