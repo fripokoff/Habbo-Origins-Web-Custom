@@ -150,22 +150,6 @@ document.querySelector('.launch-button button').addEventListener('click', functi
 	localStorage.setItem('origins_hotel', 'us');
 }
 
-
-
-// fetch('https://origins.habbo.com/gamedata/clienturls', {
-// 	headers: {
-// 	  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
-// 	}
-//   })
-//   .then(response => response.json())
-//   .then(data => {
-// 	const highestVersionRelease = data['shockwave-windows-version'];
-// 	document.getElementById('dcr_version').textContent = "dcr v" + highestVersionRelease;
-// 	console.log('v', highestVersionRelease);
-//   })
-//   .catch(error => console.error('Erreur lors de la récupération des données:', error));
-
-
 setLoaderbyCountryCode(countryCode);
 setTimeout(() => {
 	updateEmbedSize();

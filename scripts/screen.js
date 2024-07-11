@@ -27,7 +27,7 @@ function updateEmbedSize() {
     }
 
 	if (embed) {
-		embed.style.width = screenWidth  - (screenWidth * 0.07) + 'px';
+		embed.style.width = screenWidth  - (screenWidth * 0.05) + 'px';
 		embed.style.height = screenHeight + (screenWidth * 0.01) + 'px';
 	}
 
@@ -107,4 +107,4 @@ function fullScreen() {
 
 setTimeout(() => {
 updateEmbedSize();
-}, 100);
+}, 1000);
