@@ -7,78 +7,98 @@ function appendItems(items) {
 		const div = document.createElement('div');
 		div.className = 'chat';
 		div.innerHTML = `
-	  <div class="row">
-	  <div class="main-box">
-		<img class="big-furni" src="${item.images}"/>
-	  </div>
-	  <div class="dialog left">
-		<div class="row">
-		  <div class="furni_icon">
-			<img class="furni_icon" src="https://tc-api.serversia.com/img/club_sofa.png"/>
-		  </div>
-		  <div class="warning__title">${item.hcValue}</div>
+	  <div class="row rare-row">
+		<div class="main-box">
+			<img class="big-furni" src="${item.images}"/>
 		</div>
-	  </div>
+		<div class="left">
+			<div class="row">
+				<div class="warning__title">
+					${item.hcValue}
+					<span class="warning__title__text">HC(s)</span>
+				</div>
+			</div>
+		</div>
 	  </div>`;
 		container.appendChild(div);
 	});
 }
 
-function getTraderClubValues()
-{
+function fetchValues(url, callback) {
 	const extractedValues = [];
-	fetch('https://tc-api.serversia.com/items')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Réseau de réponse non ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-		
-		let updated_at = null;
-		data.forEach(item => {
-			let name = item.name;
-			let colaValue = item.cola_val;
-			let hcValue = item.hc_val;
-			let image = item.image;
-			updated_at = item.updated_at;
-			extractedValues.push({
-				name,
-				colaValue,
-				hcValue,
-				images: image
+	fetch(url)
+		.then(response => {
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			return response.json();
+		})
+		.then(data => {
+			let updated_at = null;
+			data.forEach(item => {
+				let name = item.name || item.furni_name;
+				let colaValue = item.cola_val || item.colaValue;
+				let hcValue = item.hc_val || item.hcValue;
+				let image = item.image || item.images;
+				updated_at = item.updated_at || item.last_update;
+				extractedValues.push({
+					name,
+					colaValue,
+					hcValue,
+					images: image
+				});
 			});
-		});
-		document.getElementById('webtrader').href="https://traderclub.gg/";
-		document.getElementById('webtrader').text="Visit:traderclub.gg";
+			callback(extractedValues, updated_at);
+		})
+		.catch(error => console.error('Error fetching data:', error));
+}
+
+function getTraderClubValues(callback) {
+	const url = 'https://tc-api.serversia.com/items';
+	fetchValues(url, callback);
+}
+
+function getDucketValues(callback) {
+	const url = 'https://www.ducket.net/api/furni/values';
+	fetchValues(url, callback);
+}
+
+function getTradeValues(site) {
+	document.getElementById('loader').style.display = 'block';
+	document.getElementById('items').innerHTML = '<div id="last-update" class="time"></div>';
+	let fetchFunction;
+
+	if (site === "traderclub") {
+		fetchFunction = getTraderClubValues;
+		document.getElementById('webtrader').href = "https://traderclub.gg/";
+		document.getElementById('webtrader').text = "Visit: traderclub.gg";
+	} else if (site === "ducket") {
+		fetchFunction = getDucketValues;
+		document.getElementById('webtrader').href = "https://ducket.net/";
+		document.getElementById('webtrader').text = "Visit: ducket.net";
+	} else {
+		console.error('Unknown site:', site);
+		document.getElementById('loader').style.display = 'none';
+		return;
+	}
+
+	fetchFunction((extractedValues, updated_at) => {
 		setTimeout(() => {
-			extractedValues.reverse()
+			extractedValues.reverse();
 			document.getElementById('loader').style.display = 'none';
-			appendItems(extractedValues)
+			appendItems(extractedValues);
 			document.getElementById('last-update').innerHTML = updated_at;
 			fullscreenBtn.style.boxShadow = "";
 		}, 1000);
-    })
-    .catch(error => console.error('Erreur lors de la récupération des données:', error));
-}
-function getTradeValues(site)
-{
-	document.getElementById('loader').style.display = 'block';
-	document.getElementById('items').innerHTML = '<div id="last-update" class="time"></div>';
-	if(site === "traderclub")
-	{
-		getTraderClubValues();
-	}
+	});
 }
 
-function refreshTradeValues()
-{
+function refreshTradeValues() {
 	getTradeValues(document.getElementById('tradesites').value);
 }
 
 getTradeValues(document.getElementById('tradesites').value);
 
-document.getElementById('tradesites').addEventListener('change', function() {
+document.getElementById('tradesites').addEventListener('change', function () {
 	getTradeValues(this.value);
-  });
+});

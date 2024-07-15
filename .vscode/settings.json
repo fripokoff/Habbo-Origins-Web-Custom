@@ -1,0 +1,12 @@
+{
+    "workbench.colorCustomizations": {
+        "[White Night]": {
+            "list.focusHighlightForeground": "#000000"
+        },
+        "[White]": {
+            "list.focusHighlightForeground": "#ffffff"
+        },
+        "[GitHub Dark]": {},
+        "[GitHub Dark Default]": {}
+    }
+}
