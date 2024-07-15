@@ -39,6 +39,7 @@ function fetchValues(url, callback) {
 				let name = item.name || item.furni_name;
 				let colaValue = item.cola_val || item.colaValue;
 				let hcValue = item.hc_val || item.hcValue;
+				hcValue = hcValue == null ? "N/A" : hcValue;
 				let image = item.image || item.images;
 				updated_at = item.updated_at || item.last_update;
 				extractedValues.push({
