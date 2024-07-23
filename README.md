@@ -37,8 +37,6 @@ Light : ![Screenshot 2024-06-28 002859](https://github.com/fripokoff/Habbo-Origi
 
 ## 🦾 How to update
 
-Copy `%appdata%/Habbo Launcher/downloads/[version]` folder and paste in this project root, overriding the `downloads` folder.
-
 The current online loader is updated automatically.
 
 # 🙏 Thanks
