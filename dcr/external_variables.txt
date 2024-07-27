@@ -68,7 +68,5 @@ struct.font.plain=[#font:"v", #fontSize:9,#lineHeight:10,#color:rgb("#000000"),#
 struct.font.tooltip =[#font:"v", #fontSize:9,#lineHeight:10,#color:rgb("#000000"),#ilk:#struct,#fontStyle:[#plain]]
 swimjump.key.list=[#run1:"A", #run2:"D", #dive1:"W", #dive2:"E", #dive3:"A", #dive4:"S", #dive5:"D", #dive6:"Z", #dive7:"X", #jump:"SPACE"]
 url.prefix=origins.habbo.com
-
-external.texts.txt=http://origins-gamedata.habbo.com/external_texts/1
-external.figurepartlist.txt=http://origins-gamedata.habbo.com/figuredata/1
-external.override.texts.txt=https://www.habbo.com/gamedata/override/external_flash_override_texts/9150b9689c78b0ccb62edf402e7148448fec014e
+site.url=http://origins.habbo.com;url.prefix=http://origins.habbo.com/
+client.reload.url=http://origins.habbo.com;client.fatal.error.url=http://origins.habbo.com/
