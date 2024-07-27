@@ -3,7 +3,7 @@ let countryCode = localStorage.getItem('origins_hotel') || 'us';
 localStorage.setItem('origins_hotel', countryCode);
 // var dcr = "https://origins.hiper.esp.br/latest/habbo.dcr";
 let highestVersionRelease = 0;
-var dcr = "http://fripokoff.github.io/Habbo-Origins-Web-Custom/dcr/habbo.dcr";
+var dcr = "dcr/habbo.dcr";
 var loader_config = {
 	"dcr": dcr,
 	"us": {
