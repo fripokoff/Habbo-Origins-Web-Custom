@@ -56,7 +56,7 @@ function setLoaderbyCountryCode(countryCode) {
 	changeDcr();
 	localStorage.setItem('origins_hotel', countryCode);
 	habboEmbed = document.getElementById('container');
-	habboEmbed.innerHTML = `<embed id="habboEmbed" src="${loader_config.dcr}" bgcolor="#000000" width="700" height="900" swvolume="true"
+	habboEmbed.innerHTML = `<embed id="habboEmbed" src="${loader_config.dcr}" bgcolor="#000000" width="700px" height="900px" swvolume="true"
                     swrestart="false" swpauseplay="false" swfastforward="false" swtitle="Habbo Hotel" swcontextmenu="true"
                     swstretchstyle="meet" swStretchVAlign="top" swStretchHAlign="left" swtext="" type="application/x-director" pluginspage="http://www.macromedia.com/shockwave/download/"
                     sw2="connection.info.host=${loader_config[countryCode].info_host};connection.info.port=${loader_config[countryCode].info_port}"
